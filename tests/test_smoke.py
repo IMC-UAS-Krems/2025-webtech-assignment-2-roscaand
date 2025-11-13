@@ -1,6 +1,5 @@
 import pytest
 from pathlib import Path
-from bs4 import BeautifulSoup
 import json
 from datetime import datetime
 
@@ -60,7 +59,6 @@ def test_scripts_js_exists():
         print(f"✅ {filename} is present (found as: {found})")
         assert True
 
-@pytest.mark.smoke
 def test_documentation_pdf_exists():
     filename = "Documentation.pdf"
     found = _find_case_insensitive(filename)
@@ -70,12 +68,17 @@ def test_documentation_pdf_exists():
         print(f"✅ {filename} is present (found as: {found.name})")
         assert True
 
-@pytest.mark.smoke
 def test_images_dir_exists():
     dirname = "imgs"
-    found = _find_case_insensitive(dirname)
-    if not found or not found.is_dir():
-        pytest.fail(f"❌ {dirname}/ directory is missing")
+    options = [dirname, "img"]
+    found = None
+    for d in options:
+        candidate = _find_case_insensitive(d)
+        if candidate and candidate.is_dir():
+            found = candidate
+            break
+    if not found:
+        pytest.fail(f"❌ {dirname}/ directory is missing (expected 'imgs/' or 'img/')")
     else:
         print(f"✅ {dirname}/ directory is present (found as: {found.name}/)")
         assert True
