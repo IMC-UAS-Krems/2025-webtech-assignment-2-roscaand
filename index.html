@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WarmHerz Österreich – Charity Gifts</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+ 
+</head>
+
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- #bootstrap video for guidance https://youtu.be/-qfEOE4vtxE?si=Nw7bPtD7E89oWeO4 -->
+<!-- https://youtu.be/bCTd1eRX7Iw?si=o96VNnuweatdgRNm - used for overall understanding-->
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">WarmHerz Österreich</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#gift-grid">Gifts</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="modal" data-bs-target="#cartModal">
+              <i class="fas fa-shopping-cart"></i>
+              Cart <span id="cart-count" class="badge badge-soft">0</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header  id="header-char" class="position-relative text-white"
+    style="background:url('img/wallpaper.jpg') center/cover no-repeat; height:90vh; margin-top:56px;">
+    <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
+    <div class="container h-100 position-relative">
+      <div class="row h-100 align-items-center">
+        <div class="col-lg-7">
+          <h1 class="display-4 fw-bold">WarmHerz Österreich</h1>
+          <p class="lead text-white-50">
+            Book a charity gift to support families in need.
+          </p>
+          <a href="#gift-grid" class="btn btn-soft btn-lg me-2">View Gift Catalogue</a>
+          <a href="#about-charity" class="btn btn-outline-soft btn-lg">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PRODUCT GRID -->
+   <!-- bootstrap - grid https://youtu.be/zDpCejbl1sU?si=BAhRXPRxzAhtVpph -->
+  <div id="gift-grid" class="container-fluid mt-5">
+    <div class="row g-4 p-3">
+
+      <!-- 1 -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card h-100 product-card text-center">
+          <div class="product-image-only">
+            <img src="img/food-parcel.jpg" class="img-thumbnail" alt="Food Parcel">
+          </div>
+          <div class="product-details p-3">
+            <p class="fw-bold mb-1">Food Parcel</p>
+            <p class="small text-muted mb-2">Provides a week of staple food items for a family.</p>
+            <p class="mb-2">Price: €25</p>
+            <button class="btn btn-dark add-to-cart w-100" data-item="Food Parcel" data-price="25">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card h-100 product-card text-center">
+          <div class="product-image-only">
+            <img src="img/clothes.jpg" class="img-thumbnail" alt="Clothes">
+          </div>
+          <div class="product-details p-3">
+            <p class="fw-bold mb-1">Clothes</p>
+            <p class="small text-muted mb-2">Clothes to keep warm for one person.</p>
+            <p class="mb-2">Price: €30</p>
+            <button class="btn btn-dark add-to-cart w-100" data-item="Clothes" data-price="30">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card h-100 product-card text-center">
+          <div class="product-image-only">
+            <img src="img/blanket.jpg" class="img-thumbnail" alt="Winter Blanket">
+          </div>
+          <div class="product-details p-3">
+            <p class="fw-bold mb-1">Winter Blanket</p>
+            <p class="small text-muted mb-2">Keeps someone warm during cold nights.</p>
+            <p class="mb-2">Price: €20</p>
+            <button class="btn btn-dark add-to-cart w-100" data-item="Winter Blanket" data-price="20">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card h-100 product-card text-center">
+          <div class="product-image-only">
+            <img src="img/school-kit.jpg" class="img-thumbnail" alt="School Supplies Kit">
+          </div>
+          <div class="product-details p-3">
+            <p class="fw-bold mb-1">School Supplies Kit</p>
+            <p class="small text-muted mb-2">Backpack, notebooks and pens for one child.</p>
+            <p class="mb-2">Price: €35</p>
+            <button class="btn btn-dark add-to-cart w-100" data-item="School Supplies Kit" data-price="35">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card h-100 product-card text-center">
+          <div class="product-image-only">
+            <img src="img/hygiene.jpg" class="img-thumbnail" alt="Hygiene Kit">
+          </div>
+          <div class="product-details p-3">
+            <p class="fw-bold mb-1">Hygiene Kit</p>
+            <p class="small text-muted mb-2">Soap, toothbrushes, and other basics.</p>
+            <p class="mb-2">Price: €18</p>
+            <button class="btn btn-dark add-to-cart w-100" data-item="Hygiene Kit" data-price="18">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card h-100 product-card text-center">
+          <div class="product-image-only">
+            <img src="img/baby-care.jpg" class="img-thumbnail" alt="Baby Care Pack">
+          </div>
+          <div class="product-details p-3">
+            <p class="fw-bold mb-1">Baby Care Pack</p>
+            <p class="small text-muted mb-2">Formula, diapers and wipes for infants.</p>
+            <p class="mb-2">Price: €40</p>
+            <button class="btn btn-dark add-to-cart w-100" data-item="Baby Care Pack" data-price="40">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card h-100 product-card text-center">
+          <div class="product-image-only">
+            <img src="img/first-aid.jpg" class="img-thumbnail" alt="Medical Aid Kit">
+          </div>
+          <div class="product-details p-3">
+            <p class="fw-bold mb-1">Medical Aid Kit</p>
+            <p class="small text-muted mb-2">Basic first aid supplies for a family.</p>
+            <p class="mb-2">Price: €28</p>
+            <button class="btn btn-dark add-to-cart w-100" data-item="Medical Aid Kit" data-price="28">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card h-100 product-card text-center">
+          <div class="product-image-only">
+            <img src="img/books.jpg" class="img-thumbnail" alt="Books">
+          </div>
+          <div class="product-details p-3">
+            <p class="fw-bold mb-1">Books</p>
+            <p class="small text-muted mb-2">Books for reading and learning.</p>
+            <p class="mb-2">Price: €30</p>
+            <button class="btn btn-dark add-to-cart w-100" data-item="Books" data-price="80">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9 -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card h-100 product-card text-center">
+          <div class="product-image-only">
+            <img src="img/toys.jpg" class="img-thumbnail" alt="Toys">
+          </div>
+          <div class="product-details p-3">
+            <p class="fw-bold mb-1">Toys</p>
+            <p class="small text-muted mb-2">Some toys to give children activities.</p>
+            <p class="mb-2">Price: €22</p>
+            <button class="btn btn-dark add-to-cart w-100" data-item="Toys" data-price="22">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10 -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card h-100 product-card text-center">
+          <div class="product-image-only">
+            <img src="img/hot-meal.jpg" class="img-thumbnail" alt="Hot Meal for a Child">
+          </div>
+          <div class="product-details p-3">
+            <p class="fw-bold mb-1">Hot Meal for a Child</p>
+            <p class="small text-muted mb-2">Nutritious cooked meal in a safe space.</p>
+            <p class="mb-2">Price: €10</p>
+            <button class="btn btn-dark add-to-cart w-100" data-item="Hot Meal for a Child" data-price="10">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 11 -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card h-100 product-card text-center">
+          <div class="product-image-only">
+            <img src="img/decorations.jpg" class="img-thumbnail" alt="Christmas Decorations">
+          </div>
+          <div class="product-details p-3">
+            <p class="fw-bold mb-1">Christmas Decorations</p>
+            <p class="small text-muted mb-2">Gives hope and happiness for kids.</p>
+            <p class="mb-2">Price: €15</p>
+            <button class="btn btn-dark add-to-cart w-100" data-item="Christmas Decorations" data-price="50">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 12 -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card h-100 product-card text-center">
+          <div class="product-image-only">
+            <img src="img/shoes.jpg" class="img-thumbnail" alt="Shoes">
+          </div>
+          <div class="product-details p-3">
+            <p class="fw-bold mb-1">Shoes/p>
+            <p class="small text-muted mb-2">New shoes for children.</p>
+            <p class="mb-2">Price: €20</p>
+            <button class="btn btn-dark add-to-cart w-100" data-item="Shoes" data-price="32">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  
+  <section id="checkout-section" class="container my-5 d-none">
+    <br>
+    <h3 class="mb-3">Donor Information</h3>
+
+    <form id="checkout-form" class="row g-3">
+      <div class="col-md-6">
+        <label class="form-label">Full Name</label>
+        <input type="text" id="name" class="form-control" required>
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Email</label>
+        <input type="email" id="email" class="form-control"L required>
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Phone</label>
+        <input type="text" id="phone" class="form-control" required inputmode="numeric">
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">ZIP Code</label>
+        <input type="text" id="zip" maxlength="6" class="form-control" required inputmode="numeric">
+      </div>
+
+      <hr class="mt-4">
+
+      <h5 class="mt-2">Payment Details</h5>
+
+      <div class="col-md-8">
+        <label class="form-label">Card Number</label>
+        <input type="text" id="cardNumber" class="form-control" placeholder="1234 5678 9012 3456"
+          maxlength="19" inputmode="numeric" required>
+        <div class="form-text">16 digits (spaces allowed).</div>
+      </div>
+
+      <div class="col-md-2">
+        <label class="form-label">Expiry (MM/YY)</label>
+        <input type="text" id="expiry" class="form-control" placeholder="MM/YY" maxlength="5" required inputmode="numeric">
+      </div>
+
+      <div class="col-md-2">
+        <label class="form-label">CVV</label>
+        <input type="text" id="cvv" class="form-control" placeholder="123" maxlength="4" required inputmode="numeric">
+      </div>
+
+      <div class="col-12">
+        <button type="submit" class="btn btn-soft btn-lg">
+          Confirm Donation
+        </button>
+      </div>
+    </form>
+  </section>
+
+
+  <section id="confirmation-section" class="container my-5 d-none"></section>
+
+  <section id="about-charity" class="container my-5">
+    <div class="row align-items-center">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <h2 class="fw-bold">About WarmHerz Österreich</h2>
+        <p class="text-muted">
+          WarmHerz Österreich is a non-profit charitable initiative dedicated to
+          supporting families and individuals in need across Austria.
+        </p>
+        <p class="text-muted">
+          Through meaningful charity gifts such as food parcels, hygiene kits,
+          school supplies, and medical aid, we ensure that help reaches those who
+          need it most.
+        </p>
+      </div>
+
+      <div class="col-lg-6 text-center">
+        <img src="img/about.jpg" class="img-fluid rounded shadow-sm" alt="About charity">
+      </div>
+    </div>
+  </section>
+
+  
+  <div class="modal fade" id="cartModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <div>
+            <h5 class="modal-title mb-0">Your Charity Cart</h5>
+            <small class="text-muted">10% discount when booking 3+ gifts</small>
+          </div>
+          <button class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+          <ul id="cart-items" class="list-group mb-3"></ul>
+
+          <button id="clear-cart-btn" class="btn btn-outline-danger w-100 mb-3">
+            Clear Cart
+          </button>
+
+          <div class="border rounded p-3 bg-light">
+            <div class="d-flex justify-content-between">
+              <span>Subtotal</span>
+              <span id="cart-subtotal">€0.00</span>
+            </div>
+            <div class="d-flex justify-content-between">
+              <span>Discount</span>
+              <span id="cart-discount" class="text-danger">-€0.00</span>
+            </div>
+            <div class="d-flex justify-content-between">
+              <span>Tax / Fees (20%)</span>
+              <span id="cart-tax">€0.00</span>
+            </div>
+            <hr class="my-2">
+            <div class="d-flex justify-content-between fw-bold fs-5">
+              <span>Total</span>
+              <span id="cart-total">€0.00</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer d-grid">
+          <button id="checkout-btn" class="btn btn-soft btn-lg">Proceed to Checkout</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+    <footer class="bg-dark text-white text-center py-4">
+  <div class="container">
+    <div class="card bg-dark text-white border-0">
+      <div class="card-body">
+        <h5 class="card-title">WarmHerz Österreich</h5>
+
+        <p class="card-text mb-2">
+          Your booked gifts are converted into real support for families in need across Austria.
+          Prices represent the estimated donation value for each gift.
+        </p>
+
+        <a href="#top" class="btn btn-outline-light btn-lg">Back to Top</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/scripts.js"></script>
+  </body>
+
+</html>
